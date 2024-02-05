@@ -1,4 +1,4 @@
-package sec08.ex01;
+package sec08.chap05.ex01;
 
 import java.util.Comparator;
 
