@@ -1,6 +1,11 @@
 package sec09.chap02;
 
 import sec07.chap04.*;
+
+import java.sql.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.function.*;
 
 public class Main {
@@ -83,12 +88,87 @@ public class Main {
                 .apply("오리", () -> System.out.println("꽥꽥"))
                 .onClick();
 
+        Predicate<Integer> isOddTester = i -> i % 2 == 1;
+        Predicate<String> isAllLowerCase = s -> s.equals(s.toLowerCase());
 
+        BiPredicate<Character, Integer> areSameCharNum = (c, i) -> (int) c == i;
+        BiPredicate<Unit, Unit> areSameSide = (u1, u2) -> u1.getSide() == u2.getSide();
 
+        boolean isOddT3 = isOddTester.test(3);
+        boolean isOddT4 = isOddTester.test(4);
+        boolean isAL1 = isAllLowerCase.test("Hello");
+        boolean isAl2 = isAllLowerCase.test("world");
 
+        boolean areSameCN1 = areSameCharNum.test('A', 64);
+        boolean areSameCN2 = areSameCharNum.test('A', 65);
 
+        boolean areSameSide1 = areSameSide.test(
+                new Knight(Side.RED), new Knight(Side.BLUE)
+        );
 
+        boolean areSameSide2 = areSameSide.test(
+                new Swordman(Side.BLUE), new MagicKnight(Side.BLUE)
+        );
 
+        UnaryOperator<Integer> square = i -> i * i;
+        UnaryOperator<Swordman> respawn = s -> {
+            if (s instanceof MagicKnight) return new MagicKnight(s.getSide());
+            if (s instanceof  Knight) return new Knight(s.getSide());
+            return new Swordman(s.getSide());
+        };
+
+        Integer squared = square.apply(3);
+        Swordman respawned1 = respawn.apply(new Knight(Side.BLUE));
+        Swordman respawned2 = respawn.apply(new MagicKnight(Side.RED));
+
+        BinaryOperator<Double> addTwo = (i, j) -> i + j;
+        BinaryOperator<Swordman> getWinner = (s1, s2) -> {
+            while (s1.hp > 0 && s2.hp > 0) {
+                s1.defaultAttack(s2);
+                s2.defaultAttack(s1);
+                if (s1 instanceof MagicKnight) {
+                    ((MagicKnight) s1).lighteningAttack(new Swordman[] {s2});
+                }
+                if (s2 instanceof MagicKnight) {
+                    ((MagicKnight) s2).lighteningAttack(new Swordman[] {s1});
+                }
+            }
+            if (s1.hp > 0) return s1;
+            if (s2.hp > 0) return s2;
+            return null;
+        };
+
+        Double added1 = addTwo.apply(12.34, 23.45);
+
+        Swordman winner1 = getWinner.apply(new Swordman(Side.RED), new Knight(Side.BLUE));
+        Swordman winner2 = getWinner.apply(new MagicKnight(Side.RED), new Knight(Side.BLUE));
+        Swordman winner3 = getWinner.apply(new Swordman(Side.RED), new MagicKnight(Side.BLUE));
+        Swordman winner4 = getWinner.apply(new MagicKnight(Side.RED), new MagicKnight(Side.BLUE));
+
+        System.out.println("\n- - - - -\n");
+
+        // 💡 Iterable 인터페이스의  forEach 메소드
+        // - 곧 배울 스트림의 forEach 와는 다름 (기능은 같음)
+        // - Consumer를 인자로 받아 실행
+        // - 이터레이터를 쓸 수 있는 클래스에서 사용 가능
+
+        new ArrayList<>(
+                Arrays.asList("하나", "둘", "셋", "넷", "댜섯")
+        ).forEach(s -> System.out.println(s));
+
+        System.out.println("\n- - - - -\n");
+
+        HashMap<String, Character> subjectGradeHM = new HashMap<>();
+        subjectGradeHM.put("English", 'B');
+        subjectGradeHM.put("Math", 'C');
+        subjectGradeHM.put("Programming", 'A');
+
+        //  💡 BiConsumer를 받음
+        subjectGradeHM.forEach(
+                (s, g) -> System.out.println(
+                        "%s : %c".formatted(s, g)
+                )
+        );
 
 
 
