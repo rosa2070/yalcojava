@@ -38,14 +38,12 @@ public class Ex08 {
 
         // ⭐️ 원본은 바뀌지 않는 점 확인
 
-
         //  메서드 체이닝
         String str_d1 = "하여튼 호의가 반복되면 권리인 줄 알아";
         String str_d2 = str_d1
                 .replace("하여튼", "아무튼")
                 .replace("호의", "호이".repeat(2))
                 .replace("권리", "아기공룡 둘리");
-
 
         String str_e1 = "02=123.4567_8900";
 
@@ -54,6 +52,7 @@ public class Ex08 {
         String str_e2 = str_e1
                 .replaceAll("[=._]", "-")
                 .replaceFirst("[-@#]", ")");
+
 
 
 

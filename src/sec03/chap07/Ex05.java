@@ -2,7 +2,6 @@ package sec03.chap07;
 
 public class Ex05 {
     public static void main(String[] args) {
-
         String emptyStr = "";
         String nullStr = null;
 
@@ -19,7 +18,7 @@ public class Ex05 {
         //  💡 문자열을 외부로부터 받아올 경우 등...
         String defaultStr =
                 (nullStr != null && !nullStr.isEmpty())
-                        ? nullStr : "(기본값)";
+                    ? nullStr : "(기본값)";
 
 
         //  💡 초기화되지 않은 변수와 비교
@@ -31,7 +30,6 @@ public class Ex05 {
 
         //  코드에 따라 정상실행 또는 런타임 오류
         System.out.println(nullStr2);
-
 
         //  ⭐️ 이 외에도 참조 자료형의 인스턴스는 null 가능
         Object obj = null;

@@ -16,7 +16,7 @@ public class Ex04 {
 
         for (var i = 0; i < strFormats.length; i++) {
             String format = (i + 1) + ". ";
-            for (var j = 0; j < 2; j++) {
+            for (var j=0; j<2; j++) {
                 format += strFormats[i] + " ";
             }
             format = format.trim() + "%n%n";

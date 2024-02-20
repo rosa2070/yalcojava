@@ -5,16 +5,22 @@ import java.io.FileNotFoundException;
 public class Ex02 {
     public static void main(String[] args) {
 
-        registerDutyMonty("정핫훈", 7);
+        registerDutyMonth("정핫훈", 7);
 
-        registerDutyMonty("김돌준", 13);
-        //  ⭐️ try 문으로 감싸지 않았음
-        //  - 다음 코드들이 실행되려면 주석처리해야 함
+        try {
+            registerDutyMonth("김돌준", 13);
+            //  ⭐️ try 문으로 감싸지 않았음
+            //  - 다음 코드들이 실행되려면 주석처리해야 함
+        } catch (Exception ignored) {}
 
         openMyFile("잘나온얼굴.png");
-        openMyFile("야구동영상.avi");    }
+        openMyFile("야구동영상.avi");
 
-    public static void registerDutyMonty (String name, int month) {
+
+
+    }
+
+    public static void registerDutyMonth (String name, int month) {
         if (month < 1 || month > 12) {
             throw new IndexOutOfBoundsException(
                     "우리 %s씨는 1년에 몇 달이 있는지 아직 못 배웠나봐?"
@@ -39,5 +45,4 @@ public class Ex02 {
         }
         System.out.printf("%s 파일 열람%n", fileName);
     }
-
 }

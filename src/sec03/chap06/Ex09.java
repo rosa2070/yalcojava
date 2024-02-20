@@ -18,7 +18,5 @@ public class Ex09 {
         String[] strAry2 = str2.split("-");
         String[] strAry3 = str3.split(" ");
         String[] strAry4 = str3.split(" ", 3);
-
-
     }
 }

@@ -4,13 +4,11 @@ public class Ex02 {
     public static void main(String[] args) {
 
         char ch_a1 = 'A';
-        int int_a1 = (int) ch_a1;
-        int_a1 = ch_a1; // 묵시적 형변환 가능
 
         //  정수값을 얻는 다른 방법들 - 정수값과 연산하기
         int int_a2 = ch_a1 + 0;
         int int_a3 = ch_a1 - 0;
-        int_a2 = ++ch_a1;
+
 
         //  💡 리터럴에 더할 때와 변수에 더할 때 반환 자료형이 다름
         char ch_a2 = 'A' + 1;
@@ -29,8 +27,6 @@ public class Ex02 {
         //  💡 아래의 기능으로 문자가 의미하는 정수로 변환
         int int_d1 = Character.getNumericValue('1');
         int int_d2 = Character.getNumericValue('2');
-        int_d1 = '1' - '0';
-        int_d2 = '5' - '0';
 
         //  ⚠️ 빈 문자는 사용 불가, 공백(space)는 가능
         //  - 이후 배울 문자열(String)과의 차이
@@ -38,6 +34,22 @@ public class Ex02 {
         String emptyStr = "";
 
         char space = ' ';
+
+        //패캠 추가
+        char x = 65;
+        System.out.println('Z' - 'A');
+        System.out.println(x);
+        System.out.println((int)x);
+        System.out.println((char)65);
+        System.out.println(x + 25);
+        System.out.println((char)(x+25));
+
+
+
+
+
+
+
 
     }
 }

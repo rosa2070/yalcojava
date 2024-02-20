@@ -34,7 +34,8 @@ public class Ex04 {
         boolean bool_b7 = str_b1.endsWith("호랑이");
 
 
-        String emailRegex = "^[\\w-\\.]+@([\\w]+\\.)+[\\w-]{2,4}$";
+        String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+        System.out.println(emailRegex);
 
         String str_c1 = "yalco@yalco.kr";
         String str_c2 = "yalco.yalco.kr";
@@ -43,5 +44,6 @@ public class Ex04 {
         boolean bool_c1 = str_c1.matches(emailRegex);
         boolean bool_c2 = str_c2.matches(emailRegex);
         boolean bool_c3 = str_c3.matches(emailRegex);
+
     }
 }

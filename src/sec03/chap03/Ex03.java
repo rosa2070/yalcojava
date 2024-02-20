@@ -15,5 +15,6 @@ public class Ex03 {
         //  사전순 상 먼저 오는 쪽이 작음
         boolean bool6 = 'A' < 'B';
         boolean bool7 = '가' > '나';
+
     }
 }

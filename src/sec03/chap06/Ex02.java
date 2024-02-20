@@ -3,7 +3,7 @@ package sec03.chap06;
 public class Ex02 {
     public static void main(String[] args) {
 
-        String str1 ="";
+        String str1 = "";
         String str2 = " \t\n";
 
         int int1 = str1.length();
@@ -18,9 +18,8 @@ public class Ex02 {
         boolean bool4 = str2.isBlank();
 
 
-        String str3 = "\t 에 네 르 기 파!! \n";
+        String str3 = "\t에 네 르 기 파!! \n";
 
-        //  💡 trim : 앞뒤의 공백(white space) 제거
         String str4 = str3.trim();
 
         //  변수 그 자체에 적용하기

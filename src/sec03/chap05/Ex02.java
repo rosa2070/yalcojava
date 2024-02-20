@@ -27,12 +27,13 @@ public class Ex02 {
         //  같은 곳을 참조하는 인스턴스들
         boolean bool8 = hl4 == hl5;
 
-
         //  ⭐️ 각각의 메모리상 주소 식별자 비교
         int hl1hash = System.identityHashCode(hl1);
         int hl2hash = System.identityHashCode(hl2);
         int hl3hash = System.identityHashCode(hl3);
         int hl4hash = System.identityHashCode(hl4);
         int hl5hash = System.identityHashCode(hl5);
+
+
     }
 }

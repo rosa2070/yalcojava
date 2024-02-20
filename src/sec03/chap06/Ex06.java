@@ -9,7 +9,6 @@ public class Ex06 {
         String str_a2 = str_a1.toUpperCase();
         String str_a3 = str_a1.toLowerCase();
 
-
         String str_b1 = "Hi! How are you? I'm fine. Thank you!";
         String str_b2 = "how";
 
@@ -23,6 +22,9 @@ public class Ex06 {
         boolean bool_b3 = str_b1
                 .toLowerCase()
                 .contains(str_b2.toLowerCase());
+
+
+
 
     }
 }

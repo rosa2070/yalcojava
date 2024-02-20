@@ -16,10 +16,8 @@ public class Ex01 {
 
         System.out.println("\n- - - - -\n");
 
-        IntStream.rangeClosed(0,4)
+        IntStream.rangeClosed(0, 4)
                 .forEach(Ex01::tryThings3);
-
-
     }
 
     public static void tryThings1 (int i) {
@@ -52,14 +50,10 @@ public class Ex01 {
     public static void tryThings2 (int i) {
         try {
             switch (i) {
-                case 1:
-                    System.out.println((new int[1])[1]);
-                case 2:
-                    System.out.println("abc".charAt(3));
-                case 3:
-                    System.out.println((Knight) new Swordman(Side.RED));
-                case 4:
-                    System.out.println(((String)null).length());
+                case 1: System.out.println((new int[1])[1]);
+                case 2: System.out.println("abc".charAt(3));
+                case 3: System.out.println((Knight) new Swordman(Side.RED));
+                case 4: System.out.println(((String) null).length());
             }
             System.out.printf("%d: 🎉 예외 없이 정상실행됨%n", i);
 
@@ -96,5 +90,4 @@ public class Ex01 {
             System.out.printf("%d : 🛑 기타 다른 오류%n", i);
         }
     }
-
 }

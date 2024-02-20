@@ -16,12 +16,9 @@ public class Ex01 {
 
         int ch1Int = (int) ch1;
         int ch9Int = (int) ch9;
-        // 묵시적 형변환도 가능
-        ch1Int = ch1;
-        ch9Int = ch9;
 
         // 문자 리터럴과 숫자, 유니코드로 표현 가능
-        char ch10='A';
+        char ch10 = 'A';
         char ch11 = 65;
         char ch12 = '\u0041';
 

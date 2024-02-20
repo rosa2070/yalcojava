@@ -24,7 +24,6 @@ public class Ex05 {
         int int_a6 = str_a1.compareTo(str_a4);
         int int_a7 = str_a4.compareTo(str_a3);
 
-
         String str_b1 = "abc";
         String str_b2 = "DEF";
 
@@ -32,6 +31,12 @@ public class Ex05 {
 
         //  💡 compareToIgnoreCase : 대소문자 구분 없이 비교
         int int_b2 = str_b1.compareToIgnoreCase(str_b2);
+
+
+
+
+
+
 
 
     }

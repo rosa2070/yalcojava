@@ -19,7 +19,6 @@ public class Ex07 {
                 .concat(str_a4)
                 .concat(str_a5);
 
-
         //  ⭐️ + 연산자와의 차이
 
         String str_b1 = "ABC";
@@ -41,7 +40,6 @@ public class Ex07 {
         int str_b4Hash = System.identityHashCode(str_b4);
         int str_b5Hash = System.identityHashCode(str_b5);
 
-
         //  3. null이 포함될 경우
 
         String str_c1 = null;
@@ -50,8 +48,9 @@ public class Ex07 {
         String str_c3 = str_c1 + null + "ABC";
 
         //  ⚠️ concat은 NullPointerException 발생
-        //String str_c4 = str_c1.concat("ABC");
-        //String str_c5 = "ABC".concat(str_c1);
+//        String str_c4 = str_c1.concat("ABC");
+//        String str_c5 = "ABC".concat(str_c1);
+
 
         //  4. ⭐️ 다중 연산시 생성되는 문자열 인스턴스의 수가 다름
 
@@ -74,5 +73,9 @@ public class Ex07 {
 
 
 
+
+
+
     }
+
 }

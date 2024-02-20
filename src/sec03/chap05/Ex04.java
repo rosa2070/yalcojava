@@ -1,5 +1,7 @@
 package sec03.chap05;
 
+import java.net.Inet4Address;
+
 public class Ex04 {
     public static void main(String[] args) {
 
@@ -9,7 +11,6 @@ public class Ex04 {
         String str3 = String.valueOf(123);
         String str4 = String.valueOf(3.14f);
         String str5 = String.valueOf('가');
-
 
         String str6 = true + "";
         String str7 = 123.45 + "";
@@ -23,8 +24,6 @@ public class Ex04 {
         int intNum = Integer.parseInt(str123);
         long lngNum = Long.parseLong(str123);
 
-        double dblNum = Double.parseDouble(str123);
-
         //  대소문자 무관 'true'일 때 true 반환
         boolean bool1 = Boolean.parseBoolean("TRUE");
         boolean bool2 = Boolean.parseBoolean("true");
@@ -37,10 +36,12 @@ public class Ex04 {
 
         //  ⚠️ 런타임 에러 발생. 하나씩 주석해제해서 테스트
         //  '실행'으로 테스트하거나, 디버그 후 콘솔 탭에서 확인해볼 것
+//        byte bytNum2 = Byte.parseByte("12345");
+//        int intNum2 = Integer.parseInt("123.45");
+//        double dblNum2 = Integer.parseInt("하나");
 
-        byte bytNum2 = Byte.parseByte("12345");
-        int intNum2 = Integer.parseInt("123.45");
-        double dblNum2 = Integer.parseInt("하나");
+
+
 
     }
 }

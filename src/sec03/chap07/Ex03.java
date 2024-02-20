@@ -1,5 +1,7 @@
 package sec03.chap07;
 
+import sec08.chap05.ex02.Person;
+
 public class Ex03 {
     public static void main(String[] args) {
 
@@ -26,6 +28,5 @@ public class Ex03 {
 
             fltResults[i] = format.formatted(1.2, 123.456, 1234.123456789, -123.4567);
         }
-
     }
 }
