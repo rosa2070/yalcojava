@@ -32,11 +32,7 @@ public class Ex02 {
 
         //  메소드 등 사용처들에 혼용 가능
         Integer intInst4 = add(3, 5);
-
-
-
     }
 
-    static int add(Integer a, Integer b) { return a + b; }
-
+    static int add(Integer a, Integer b) {return a + b;}
 }

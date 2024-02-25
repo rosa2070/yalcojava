@@ -1,7 +1,7 @@
 package sec07.chap01.ex04;
 
 public class NotCloneable {
-    // 원시타입 필드들
+    //  원시타입 필드들
     String title;
     int no;
 
@@ -30,5 +30,4 @@ public class NotCloneable {
         //    - 즉 clone을 오버라이드해서 쓰는 의미 없음
         return super.clone();
     }
-
 }

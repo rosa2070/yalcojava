@@ -86,8 +86,8 @@ public class Ex02 {
                 .reverse()
                 .toString();
 
-
         StringBuilder strBldr3 = new StringBuilder("ABCDEFG");
+
 
         //  수동으로 저장공간 늘려주기
         //  - 작업할 전체 용량이 초기화 이후 계산되었을 때 유용
@@ -97,7 +97,6 @@ public class Ex02 {
         //  주어진 범위만 문자열로 반환
         String strBldr3Substr = strBldr3.substring(2, 5);
 
-
         //  ⭐️ CharSequence 인터페이스
         //  - String, StringBuffer, StringBuilder 모두 이를 구현
         //  - Integer.parseInt 등의 메서드에 인자 타입으로 널리 사용
@@ -106,11 +105,6 @@ public class Ex02 {
         CharSequence cs1 = "ABC";
         CharSequence cs2 = new StringBuffer();
         CharSequence cs3 = new StringBuilder();
-
-
-
-
-
 
 
     }

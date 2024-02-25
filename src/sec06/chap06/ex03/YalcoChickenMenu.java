@@ -18,8 +18,8 @@ public enum YalcoChickenMenu {
         this.spicyLevel = spicyLevel;
     }
 
-    public String getName() {return name; }
-    public int getPrice() {return price;}
+    public String getName() {return name;}
+    public int getPrice() { return price;}
 
     public void setPrice(int price) {
         this.price = price;
@@ -27,11 +27,12 @@ public enum YalcoChickenMenu {
 
     public String getDesc() {
         String peppers = "";
-        if (spicyLevel > 0) {
+        if (spicyLevel > 0){
             peppers = "🌶️".repeat(spicyLevel);
         }
 
         return "%s %s원 %s"
                 .formatted(name, price, peppers);
     }
+
 }

@@ -17,8 +17,6 @@ public class YalcoChicken {
             return;
         }
 
-        System.out.println(
-                ordered.getPrice() + "원입니다."
-        );
+        System.out.println(ordered.getPrice() + "원입니다.");
     }
 }

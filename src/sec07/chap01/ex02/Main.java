@@ -2,7 +2,6 @@ package sec07.chap01.ex02;
 
 public class Main {
     public static void main(String[] args) {
-
         Click click1 = new Click(123, 456, 5323487);
         Click click2 = new Click(123, 456, 5323487);
         Click click3 = new Click(123, 456, 2693702);
@@ -17,5 +16,6 @@ public class Main {
         boolean boolB = click1.equals(click2);
         boolean boolC = click1.equals(click3);
         boolean boolD = click1.equals(click4);
+
     }
 }

@@ -2,6 +2,7 @@ package sec10.chap04;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Ex04 {
     public static void main(String[] args) {
@@ -44,4 +45,5 @@ public class Ex04 {
             throw we;
         }
     }
+
 }

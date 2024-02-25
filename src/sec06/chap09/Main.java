@@ -46,7 +46,6 @@ public class Main {
 
         System.out.println("\n- - - - -\n");
 
-
         //  ⭐️ java.time의  Local... 클래스 인스턴스들은 불변
         //  - 생성자 사용이 금지된 것은 인스턴스 생성을 제한하기 위함
         //  - of 메소드를 사용하여, 적절할 때만 생성된 것을 받도록
@@ -60,7 +59,7 @@ public class Main {
             System.out.println(day);
         }
 
-        LocalDate threeMothsLater = today.plusMonths(3);
+        LocalDate threeMonthsLater = today.plusMonths(3);
         LocalDate tenYearsBefore = today.minusYears(10);
 
         //  💡 메소드 체이닝 사용
@@ -78,11 +77,10 @@ public class Main {
                 .plusSeconds(6)
                 .minusNanos(7);
 
-
         System.out.println("\n- - - - -\n");
 
         //  💡 ZonedDateTime : 시간대 정보를 추가로 가짐
-        //  - '이 컴퓨터가 어느 시간대의 시간을 따르는가
+        //  - '이 컴퓨터가 어느 시간대의 시간을 따르는가'
         ZonedDateTime nowHere = ZonedDateTime.now();
         System.out.println(nowHere);
 
@@ -97,7 +95,6 @@ public class Main {
         ); //  ⭐️ ZoneId 클래스에서 지역들 목록 볼 것
         //  서울에서는 오전 5시
 
-
         System.out.println("\n- - - - -\n");
 
         //  시간차이 구하기
@@ -105,12 +102,11 @@ public class Main {
         //  💡 Period 클래스 : 두 날짜 사이의 간격을 다루는 클래스
         LocalDate childrensDay30 = LocalDate.of(2030, 5, 5);
         Period toChldDay30 = Period.between(today, childrensDay30);
-        int[] toChldDay30Units = {
+        int[] toChldDay30inUnits = {
                 toChldDay30.getYears(),
                 toChldDay30.getMonths(),
                 toChldDay30.getDays()
-        };
-
+        }; // 연, 월, 일 부분 각각 표시
 
         LocalDateTime year2000 = LocalDateTime.of(
                 2000, 1, 1, 0, 0
@@ -123,7 +119,7 @@ public class Main {
                 from2000.toHours(),
                 from2000.toMinutes(),
                 from2000.toSeconds()
-        }; // 일, 시, 분, 초 등의 단위로 환산 (위의 Period와 다름)
+        };  // 일, 시, 분, 초 등의 단위로 환산 (위의 Period와 다름)
 
 
         //  ⭐️ 시간 표기형식 지정하기
@@ -156,7 +152,6 @@ public class Main {
             System.out.println(now.format(formatter));
         }
 
-
         //  역 : 문자열에서 시간 인스턴스로
 
         String christmas25str = "2025-12-25";
@@ -171,7 +166,5 @@ public class Main {
                 DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime christmas25dinner = LocalDateTime
                 .parse(christmas25dinnerStr, formatterB);
-
-
     }
 }

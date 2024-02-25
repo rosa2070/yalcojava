@@ -26,19 +26,20 @@ public class DeepCopied implements Cloneable {
         //  - 원시값 요소들을 하나하나 복사해 넣음
 
         clone.numbers = new int[numbers.length];
-        for (int i = 0; i < numbers.length; i++) {
+        for (int i=0; i < numbers.length; i++) {
             clone.numbers[i] = numbers[i];
         }
 
         clone.click = new Click(click.x, click.y);
 
-        //이중 참조 (인스턴스의 배열)
+        //  이중 참조 (인스턴스의 배열)
         //  - 이중으로 복사
         clone.clicks = new Click[clicks.length];
-        for (int i = 0; i < clicks.length; i++) {
+        for (int i=0; i<clicks.length; i++) {
             clone.clicks[i] = new Click(clicks[i].x, clicks[i].y);
         }
 
         return clone;
+
     }
 }

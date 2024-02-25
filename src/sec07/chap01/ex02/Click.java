@@ -17,4 +17,5 @@ public class Click {
 //        if (!(obj instanceof Click)) return false;
 //        return this.x == ((Click)obj).x && this.y == ((Click)obj).y;
 //    }
+
 }

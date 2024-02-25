@@ -2,7 +2,6 @@ package sec07.chap02;
 
 public class Ex03 {
     public static void main(String[] args) {
-
         //  💡 숫자 클래스 메소드들
 
         //  CharSequence로부터 인스턴스 반환
@@ -23,11 +22,10 @@ public class Ex03 {
         //  parseInt(CharSequence, 시작위치, 끝위치, 진수)
         int int3 = Integer.parseInt("1234567", 3, 5, 10);
 
-
         //  💡 문자 클래스 메소드들
 
         String strSample = "Ab가1 .";
-        for (int i = 0; i < strSample.length(); i++) {
+        for (int i=0; i<strSample.length(); i++) {
             Character c = strSample.charAt(i);
             System.out.printf(
                     "[%c] : L: %b, U: %b, L: %b, D: %b, S: %b%n",
@@ -46,7 +44,7 @@ public class Ex03 {
         String intStr = int1.toString();
         String dblStr = Double.valueOf(3.14).toString();
         String blnStr = ((Boolean) false).toString();
-//        String chrStr = new Character('A').toString();
+        String chrStr = new Character('A').toString();
 
         //  인스턴스끼리의 value 비교
         Integer intA = 12345;
@@ -72,6 +70,7 @@ public class Ex03 {
         Integer flt1Int = flt1.intValue(); // ⚠️ 소수점 이하 버림
         Short int1DblSrt = int1Dbl.shortValue();
 
+        
 
     }
 }

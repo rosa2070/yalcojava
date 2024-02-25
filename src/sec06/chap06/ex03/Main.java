@@ -20,7 +20,7 @@ public class Main {
                 YalcoChickenMenu.valueOf("FR"),
                 YalcoChickenMenu.valueOf("PP"),
                 YalcoChickenMenu.valueOf("GJ"),
-//                YalcoChickenMenu.valueOf("NN"), // ⚠️ 런다임 에러
+                //  YalcoChickenMenu.valueOf("NN"), // ⚠️ 런다임 에러
 
         };
 
@@ -42,7 +42,6 @@ public class Main {
             System.out.println(menu.getDesc());
         }
 
-
         System.out.println("\n- - - - -\n");
 
         YalcoChicken store1 = new YalcoChicken();
@@ -50,6 +49,9 @@ public class Main {
         for (String menuName : "양념치킨,능이백숙,땡초치킨".split(",")) {
             store1.takeOrder(menuName);
         }
+
+
+
 
 
     }

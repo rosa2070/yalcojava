@@ -17,7 +17,7 @@ public class ShallowCopied implements Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    public Object clone() throws CloneNotSupportedException {
 
         //  Cloneable을 구현했으므로 정상 동작
         //  - 원시값만 완전히 복사됨

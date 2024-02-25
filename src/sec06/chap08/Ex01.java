@@ -2,6 +2,7 @@ package sec06.chap08;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.util.BitSet;
 import java.util.Random;
 
 public class Ex01 {
@@ -29,7 +30,7 @@ public class Ex01 {
         double round2 = Math.round(4.56);
 
         //  큰 수 또는 작은 수 반환. 자료형마다 오버로드
-        int largerInt = Math.max(2,3);
+        int largerInt = Math.max(2, 3);
         float smallerFlt = Math.min(1.2f, 3.4f);
 
         //  제곱
@@ -42,8 +43,8 @@ public class Ex01 {
         double rand3 = Math.random();
 
         //  1에서 10 사이의 무작위 정수
-        int _1to10_1 = (int) Math.ceil(Math.random() * 10);
-        int _1to10_2 = (int) Math.floor(Math.random() * 10) + 1;
+        int _1to10_1 = (int) Math.ceil(Math.random()*10);
+        int _1to10_2 = (int) Math.floor(Math.random()*10) + 1;
 
         //  ~Exact 메소드들 : 자료형의 범위를 넘기면 오류 발생
         int add1 = Math.addExact(2_147_483_645, 2);
@@ -56,25 +57,25 @@ public class Ex01 {
         //  아래를 여러 차례 실행해 볼 것
 
         //  ⭐ 아래를 주석해제한 뒤 실행해 볼 것
-        //  random.setSeed(1234);
+//        random.setSeed(1234);
 
         int randInt1 = random.nextInt();
         int randInt2 = random.nextInt();
         int randInt3 = random.nextInt();
         // 범위 지정 (이상, 미만)
-        int randInt4 = random.nextInt(0, 10);
+        int randInt4 = random.nextInt(0,10);
         int randInt5 = random.nextInt(0, 10);
         int randInt6 = random.nextInt(0, 10);
 
         double randDbl1 = random.nextDouble();
         double randDbl2 = random.nextDouble();
+
         // 범위 지정 (이상, 미만)
         double randDbl3 = random.nextDouble(3.14, 5.67);
         double randDbl4 = random.nextDouble(3.14, 5.67);
 
         boolean randBln1 = random.nextBoolean();
         boolean randBln2 = random.nextBoolean();
-
 
         long maxLong = Long.MAX_VALUE;
 
@@ -90,7 +91,6 @@ public class Ex01 {
 
         int bigIntCompare1 = bigInt1.compareTo(bigInt2);
         int bigIntCompare2 = bigInt2.compareTo(bigInt1);
-
 
         //  부동소수점 오차
         double num1 = 0.2 + 0.3f;
@@ -121,14 +121,6 @@ public class Ex01 {
         double num10 = new BigDecimal("0.9")
                 .remainder(new BigDecimal("0.6"))
                 .doubleValue();
-
-
-
-
-
-
-
-
 
 
 
