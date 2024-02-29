@@ -1,11 +1,12 @@
 package sec08.chap02;
 
 import sec07.chap04.*;
+
+import java.lang.reflect.Array;
 import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-
         //  ⭐️ 제네릭을 사용하여 타입 지정
         //  - 붙이지 않을 시 <Object>와 동일
         ArrayList<Integer> ints1 = new ArrayList<>();
@@ -30,11 +31,15 @@ public class Main {
             System.out.println(i);
         }
 
+
         int ints1Size = ints1.size(); // 요소 개수
         boolean ints1IsEmpty = ints1.isEmpty(); // size가 0인지 여부 반환
         int ints12nd = ints1.get(1); // 인덱스로 요소 접근
-        boolean ints1Con3 = ints1.contains(33); // 포함 여부
+        boolean ints1Con3 = ints1.contains(33);
         boolean ints1Con6 = ints1.contains(66);
+
+        ints1.set(2, 444); // 위치의 요소 수정
+        ints1.add(0, 11); // 위치에 요소 추가 (다음 요소들 밀어냄)
 
         //  ⭐️ 간략한 생성 및 초기화 방법들
         ArrayList<Integer> ints2A = new ArrayList<>(
@@ -48,7 +53,6 @@ public class Main {
         ArrayList<Integer> ints2C = new ArrayList<>();
         Collections.addAll(ints2C, 1, 2, 3, 4, 5);
 
-
         //  💡 다른 Collection 인스턴스를 사용하여 생성
         ArrayList<Integer> ints3 = new ArrayList<>(ints1);
 
@@ -56,7 +60,7 @@ public class Main {
         ArrayList<Integer> ints4 = (ArrayList<Integer>) ints3.clone();
 
         ints3.remove(4); // int: 인덱스로 지우기
-        ints3.remove((Integer) 55); // 클래스 자료형: 요소로 지우기
+        ints3.remove((Integer)55); // 클래스 자료형: 요소로 지우기
 
         ints1.removeAll(ints3); // 주어진 콜렉션에 있는 요소들 지우기
 
@@ -66,23 +70,21 @@ public class Main {
         Object[] intsAry2_Obj = ints1.toArray();
 
         //  ⭐️ 특정 타입의 배열로 반환하려면?
-//          Integer[] ints1Ary1 = (Integer[]) ints1.toArray(); // ⚠️ 이렇게는 불가
+//        Integer[] ints1Ary1 = (Integer[]) ints1.toArray(); // ⚠️ 이렇게는 불가
         //  💡 인자로 해당 타입 배열의 생성자를 넣어줌
         //  - 다음 섹션에 배울 메소드 참조 사용 (9-3강 수강 후 다시 볼 것)
         Integer[] ints1Ary2 = ints1.toArray(Integer[]::new);
 
         ints1.clear(); // 리스트 비움
 
-
         //  제네릭 적용
         numbers.add(Integer.valueOf(123));
         numbers.add(3.14);
 //        numbers.add("Hello"); // ⚠️ 불가
 
-//        knights.add(new Swordman(Side.BLUE));
+//        knights.add(new Swordman(Side.BLUE)); // ⚠️ 불가
         knights.add(new Knight(Side.BLUE));
         knights.add(new MagicKnight(Side.RED));
-
 
         //  와일드카드 적용
         //  기사 이상의 그룹으로만 편성될 수 있는 정예분대
@@ -107,12 +109,14 @@ public class Main {
         //  💡 ArrayList에만 있는 메소드들 중...
         ArrayList<Attacker> attackers = new ArrayList<>();
         //  자주 쓰이지는 않음
-        attackers.ensureCapacity(5);
+        attackers.ensureCapacity(5); // 자리수 미리 확보
         attackers.trimToSize(); // 남는 자리 없애기 (메모리 회수)
 
         //  💡 LinkedList에만 있는 메소드들 중...
         LinkedList<Integer> intNums = new LinkedList<>();
-        for (int intNum : new int[] {2, 3, 4}) { intNums.add(intNum); };
+        for (int intNum : new int[] {2, 3, 4}) {
+            intNums.add(intNum);
+        }
 
         intNums.addFirst(1);
         intNums.addFirst(0);
@@ -137,22 +141,20 @@ public class Main {
 
         //  ⭐️ 위의 기능들 활용하여 Stack/Queue 구현
 
-
-        LinkedList<Character> charList = new LinkedList<>();
+        LinkedList<Character> charLList = new LinkedList<>();
 
         //  💡 push & pop : 스택 간편하게 구현
         //  - 클래스 코드에서 살펴볼 것
 
-        charList.push('A');
-        charList.push('B');
-        charList.push('C');
-        charList.push('D');
-        charList.push('E');
+        charLList.push('A');
+        charLList.push('B');
+        charLList.push('C');
+        charLList.push('D');
+        charLList.push('E');
 
-        char pop1 = charList.pop();
-        char pop2 = charList.pop();
-        char pop3 = charList.pop();
-
+        char pop1 = charLList.pop();
+        char pop2 = charLList.pop();
+        char pop3 = charLList.pop();
 
         List<Integer> list1 = Arrays.asList(1, 2, 3, 4, 5);
         ArrayList<Integer> list2 = new ArrayList<>(list1);
@@ -161,7 +163,6 @@ public class Main {
         String list2Type = list2.getClass().getName();
 
 //        list1.add(6); // ⚠️ 런타임 오류
-        list2.add(6);
 
 
         List<Integer> intList = new ArrayList<>();
@@ -172,10 +173,5 @@ public class Main {
 
         Map<Integer, String> intStrMap = new HashMap<>();
         intStrMap = new TreeMap<>();
-
-
-
-
-
     }
 }

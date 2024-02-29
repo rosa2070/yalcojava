@@ -9,7 +9,7 @@ public class FormClicker<T extends FormElement & Clickable> {
 
     //  ⭐️ 조건의 클래스와 인터페이스의 기능 사용 가능
     //  - 자료형의 범위를 특정해주므로
-    public void printElemMode () {
+    public void printElemMode() {
         formElem.printMode();
     }
 

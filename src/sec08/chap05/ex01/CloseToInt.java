@@ -10,6 +10,6 @@ public class CloseToInt implements Comparator<Integer> {
 
     @Override
     public int compare(Integer o1, Integer o2) {
-        return (Math.abs(o1-closeTo) - Math.abs(o2-closeTo));
+        return (Math.abs(o1 - closeTo) - Math.abs(o2 - closeTo));
     }
 }

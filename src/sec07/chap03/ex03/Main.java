@@ -3,19 +3,6 @@ package sec07.chap03.ex03;
 import sec05.chap09.ex01.*;
 
 public class Main {
-    public static void main(String[] args) {
-
-        double sum1 = add2Num(12, 34.56);
-//        double sum2 = add2Num("1", true); // ⚠️ 불가
-
-
-        descHuntingMamal(new PolarBear());
-//        descHuntingMamal(new GlidingLizard()); // ⚠️ 불가
-
-        descFlyingHunter(new Eagle());
-        descFlyingHunter(new GlidingLizard());
-//        descFlyingHunter(new PolarBear()); // ⚠️ 불가
-    }
 
     //  💡 T는 Number를 상속한 클래스이어야 한다는 조건
     public static <T extends Number> double add2Num(T a, T b) {
@@ -37,5 +24,23 @@ public class Main {
     void descFlyingHunter (T animal) {
         animal.fly();
         animal.hunt();
+    }
+
+
+
+    public static void main(String[] args) {
+        double sum1 = add2Num(12, 34.56);
+//        double sum2 = add2Num("1" + true); // ⚠️ 불가
+
+        descHuntingMamal(new PolarBear());
+//        descHuntingMamal(new GlidingLizard()); // ⚠️ 불가
+
+        descFlyingHunter(new Eagle());
+        descFlyingHunter(new GlidingLizard());
+//        descFlyingHunter(new PolarBear()); // ⚠️ 불가
+
+
+
+
     }
 }

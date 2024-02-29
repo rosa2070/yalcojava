@@ -6,7 +6,6 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-
         Map<Integer, String> numNameHMap = new HashMap<>();
         //  💡 put 메소드를 사용하여 키와 값 삽입
         numNameHMap.put(1, "홍길동");
@@ -19,29 +18,32 @@ public class Main {
         nameHeightHMap.put("박숏달", 152.3);
         nameHeightHMap.put("정기준", 171.2);
 
-        Map<Side, ArrayList<Unit>> sideUnitsHMap = new HashMap<>();
-        sideUnitsHMap.put(
+        Map<Side, ArrayList<Unit>> sideUnitHMap = new HashMap<>();
+        sideUnitHMap.put(
                 Side.BLUE,
                 new ArrayList<>(
                         Arrays.asList(
                                 new Swordman(Side.BLUE),
                                 new Knight(Side.BLUE),
-                                new MagicKnight(Side.BLUE))
+                                new MagicKnight(Side.BLUE)
+                        )
                 )
         );
-        sideUnitsHMap.put(
+        sideUnitHMap.put(
                 Side.RED,
                 new ArrayList<>(
                         Arrays.asList(
                                 new Knight(Side.RED),
                                 new Knight(Side.RED),
-                                new Knight(Side.RED))
+                                new Knight(Side.RED)
+                        )
                 )
         );
 
         //  💡 putAll : 대상 맵으로부터 전부 가져옴
         Map<Integer, String> numNameHMapClone = new HashMap<>();
         numNameHMapClone.putAll(numNameHMap);
+
 
         //  💡 get 메소드에 키를 넣어 값 접근
         String no2 = numNameHMap.get(2);
@@ -60,12 +62,16 @@ public class Main {
         for (Integer n : numNameHMap.keySet()) {
             System.out.println(numNameHMap.get(n));
         }
-        for (Side side : sideUnitsHMap.keySet()) {
-            for (Unit unit : sideUnitsHMap.get(side)) {
+        for (Side side : sideUnitHMap.keySet()) {
+            for (Unit unit: sideUnitHMap.get(side)) {
                 System.out.println(unit);
             }
         }
 
+        // 💡 containsKey / containsValue : 키 / 값 포함되는 쌍 있는지 확인
+        boolean contains1 = nameHeightHMap.containsKey("박숏달");
+        boolean contains2 = nameHeightHMap.containsKey("장롱달");
+        boolean contains3 = nameHeightHMap.containsValue(171.2);
 
         System.out.printf("\n- - - - -\n");
 
@@ -104,14 +110,12 @@ public class Main {
         }
 
         //  remove, clear, isEmpty 메소드들
-
         numNameHMap.remove(1); // 주어진 키가 있다면 삭제
         numNameHMap.remove(2, "황대장"); // 주어진 키와 값의 쌍이 있다면 삭제
 
         boolean isEmpty1 = nameHeightHMap.isEmpty();
         nameHeightHMap.clear();
         boolean isEmpty2 = nameHeightHMap.isEmpty();
-
 
         //  ⭐️ 키 순으로 정렬됨 확인
         TreeMap<Integer, String[]> classKidsTMap = new TreeMap<>();
@@ -125,9 +129,6 @@ public class Main {
         int firstKey = classKidsTMap.firstKey();
         int lastKey = classKidsTMap.lastKey();
 
-        Map.Entry<Integer, String[]> firstEntry = classKidsTMap.firstEntry();
-        Map.Entry<Integer, String[]> lastEntry = classKidsTMap.lastEntry();
-
         int ceil4 = classKidsTMap.ceilingKey(4);
         Map.Entry<Integer, String[]> floor4 = classKidsTMap.floorEntry(4);
 
@@ -135,7 +136,6 @@ public class Main {
         Map.Entry<Integer, String[]> pollF2 = classKidsTMap.pollFirstEntry();
         Map.Entry<Integer, String[]> pollL1 = classKidsTMap.pollLastEntry();
         Map.Entry<Integer, String[]> pollL2 = classKidsTMap.pollLastEntry();
-
 
 
 

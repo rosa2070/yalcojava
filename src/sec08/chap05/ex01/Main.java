@@ -2,7 +2,10 @@ package sec08.chap05.ex01;
 
 import sec07.chap04.*;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
@@ -41,21 +44,18 @@ public class Main {
             }
         });
 
-        //  💡 ArrayList도 sort 메소드 사용 가능
         ArrayList<Integer> numsAry = new ArrayList<>(Arrays.asList(nums));
         numsAry.sort(new IntDescComp());
-
 
         numsAry.sort(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
-                return (o1 % 2) - (o2 % 2); // 짝수가 앞으로 오도록
+                return (o1 % 2) - (o2 %2); // 짝수가 앞으로 오도록
             }
         });
 
-
-        TreeSet<Unit> unitTSet = new TreeSet<>(new UnitSorter());
-        for (Unit u : new Unit[] {
+        TreeSet<Unit> unitTSet = new TreeSet<Unit>(new UnitSorter());
+        for (Unit u: new Unit[] {
                 new Knight(Side.BLUE),
                 new Knight(Side.BLUE), // 중복
                 new Swordman(Side.RED),

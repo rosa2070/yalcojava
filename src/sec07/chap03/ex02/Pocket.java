@@ -1,6 +1,5 @@
 package sec07.chap03.ex02;
 
-//  원하는 자료형들로 세 개의 필드를 갖는 클래스
 public class Pocket<T1, T2, T3> {
     private T1 fieldA;
     private T2 fieldB;

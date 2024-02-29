@@ -14,21 +14,10 @@ public class Person implements Comparable<Person> {
         this.height = height;
     }
 
-    public int getNo() {
-        return no;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public double getHeight() {
-        return height;
-    }
+    public int getNo() { return no;}
+    public String getName() { return name; }
+    public int getAge() { return age;}
+    public double getHeight() { return height;}
 
     @Override
     public int compareTo(Person p) {

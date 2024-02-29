@@ -1,7 +1,5 @@
 package sec03.chap07;
 
-import sec08.chap05.ex02.Person;
-
 public class Ex03 {
     public static void main(String[] args) {
 

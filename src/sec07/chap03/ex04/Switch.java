@@ -8,13 +8,12 @@ public class Switch extends FormElement implements Clickable {
     }
 
     @Override
-    public void onClick() {
-        func();
-    }
+    public void onClick() { func();}
 
     @Override
     void func() {
         isOn = !isOn;
         System.out.printf("%s(으)로 전환%n", isOn ? "ON" : "OFF");
     }
+
 }

@@ -1,6 +1,7 @@
 package sec08.chap06;
 
 import sec07.chap04.*;
+
 import java.util.*;
 
 public class Main {
@@ -25,11 +26,11 @@ public class Main {
         intItor = intHSet.iterator();
 
         //  💡 remove : 현 위치의 요소 삭제
-//        while (intItor.hasNext()) {
-//            if (intItor.next() % 3 == 0) {
-//                intItor.remove();
-//            }
-//        }
+        while(intItor.hasNext()) {
+            if (intItor.next() % 3 == 0) {
+                intItor.remove();
+            }
+        }
 
         //  ⚠️ foreach 문으로 시도하면 오류
 //        for (Integer num : intHSet) {
@@ -63,7 +64,7 @@ public class Main {
             System.out.printf("%s 벼락 공격%n", enemy);
             enemy.hp -= 50;
         }
-        while (enemyItor.hasNext() && fireBalls-- > 0) {
+        while (enemyItor.hasNext() && fireBalls-- >0) {
             Unit enemy = enemyItor.next();
             System.out.printf("%s 파이어볼 공격%n", enemy);
             enemy.hp -= 30;
@@ -77,8 +78,8 @@ public class Main {
         System.out.println("\n- - - - -\n");
 
         Map<Integer, Double> hashMap = new HashMap<>();
-        for (int i = 0; i < 10; i++) {
-            hashMap.put(i + 1, Math.random() * 10);
+        for (int i=0; i<10; i++) {
+            hashMap.put(i+1, Math.random()* 10);
         }
 
         //  ⭐️ 맵의 경우는 아래와 같이 이터레이션
@@ -87,7 +88,7 @@ public class Main {
         Iterator<Double> hmValueItor = hashMap.values().iterator();
         Iterator<Map.Entry<Integer, Double>> hmEntryItor = hashMap.entrySet().iterator();
 
-        while (hmKeyItor.hasNext()) {
+        while(hmKeyItor.hasNext()) {
             System.out.println(hmKeyItor.next());
         }
         System.out.println("\n- - - - -\n");
@@ -97,7 +98,7 @@ public class Main {
         }
         System.out.println("\n- - - - -\n");
 
-        while (hmEntryItor.hasNext()) {
+        while(hmEntryItor.hasNext()) {
             System.out.println(hmEntryItor.next());
         }
 
@@ -105,18 +106,26 @@ public class Main {
         //  - 여기서 remove하는 것은 원본 맵에 영향 끼치지 않음
         while (hmKeyItor.hasNext()) {
             int i = hmKeyItor.next();
-            if (i % 3 == 0) hmKeyItor.remove();
+            if (i % 3 ==0) hmKeyItor.remove();
         }
+
         while (hmValueItor.hasNext()) {
             double d = hmValueItor.next();
-            if (d < 5) hmKeyItor.remove();
+            if (d < 5) hmValueItor.remove();
         }
-        while (hmEntryItor.hasNext()) {
+        while(hmEntryItor.hasNext()) {
             Map.Entry<Integer, Double> e = hmEntryItor.next();
             if (e.getKey() % 2 == 0) {
                 hmEntryItor.remove();
             }
         }
+
+
+
+
+
+
+
 
 
     }

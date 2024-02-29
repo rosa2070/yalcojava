@@ -42,7 +42,6 @@ public class Main {
         knightHorse = sonata;
         knightHorse = grandeur;
 
-
         //  💡 Knight과 그 조상 클래스만 받을 수 있음
         //  마법기사만 태우는 말은 받지 않는 변수
         Horse <? super Knight> nonLuxuryHorse;
@@ -72,7 +71,7 @@ public class Main {
 
         //  ⭐️ 제네릭은 변수에 들어올 값에 대한 제한
         //  - 데이터 그 자체에 대함이 아님
-        Horse[] horses = { avante, sonata, grandeur };
+        Horse[] horses = { avante, sonata, grandeur};
         for (Horse horse : horses) {
             horse.setRider(new Unit());
         } // ⁉️ 에러 발생하지 않음

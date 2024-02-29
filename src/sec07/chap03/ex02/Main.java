@@ -2,15 +2,10 @@ package sec07.chap03.ex02;
 
 public class Main {
     public static void main(String[] args) {
-
         //  선언시 아래와 같이 자료형에 각 타입변수의 자료형을 명시
-        //  - 제네릭에는 원시값이 아닌 클래스만 사용 가능
+        //  - 제내릭에는 원시값이 아닌 클래만 사용 가능
         //  - (래퍼 클래스의 또 다른 존재 이유)
         Pocket<Double, Double, Double> size3d1 =
-                new Pocket<>(123.45, 234.56, 345.67);
-
-        //  타입추론도 가능은 함
-        Pocket<Double, Double, Double> size3d2 =
                 new Pocket<>(123.45, 234.56, 345.67);
 
         double width = size3d1.getFieldA();
@@ -26,8 +21,6 @@ public class Main {
                 new Pocket<>("전우치", 30, true),
                 new Pocket<>("임꺽정", 27, true)
         };
-
-
 
     }
 }

@@ -16,21 +16,19 @@ public class Main {
         Horse<Knight> sonata = new Horse<>(50);
 
         avante.setRider(r_swordman1); // 🔴
-        sonata.setRider(b_magicKnight2);
+        sonata.setRider(b_magicKnight1);
 
-        r_swordman1.defaultAttack(b_knight1); // 🔴
+        r_swordman1.defaultAttack(b_knight1);
         r_knight1.defaultAttack(b_magicKnight1);
         r_knight2.switchWeapon();
         r_knight2.defaultAttack(b_magicKnight2);
 
         b_magicKnight1.defaultAttack(r_swordman1);
-        b_magicKnight2.lighteningAttack(new Unit[] {
+        b_magicKnight1.lighteningAttack(new Unit[] {
                 r_knight1,
                 r_knight2,
                 r_magicKnight1
         });
-
-
 
     }
 }

@@ -1,7 +1,7 @@
 package sec07.chap03.ex04;
 
 public abstract class FormElement {
-    public enum MODE {LIGHT, DARK }
+    public enum MODE {LIGHT, DARK}
 
     private static MODE mode = MODE.LIGHT;
 
@@ -10,4 +10,5 @@ public abstract class FormElement {
     }
 
     abstract void func();
+
 }

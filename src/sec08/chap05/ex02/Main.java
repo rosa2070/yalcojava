@@ -1,12 +1,9 @@
 package sec08.chap05.ex02;
 
-import com.sun.source.util.Trees;
-
 import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-
         TreeSet[] treeSets = {
                 new TreeSet<>(),
                 new TreeSet<>(new PersonComp(PersonComp.SortBy.NO, PersonComp.SortDir.DESC)),
@@ -27,7 +24,7 @@ public class Main {
         }
 
         for (TreeSet ts: treeSets) {
-            for (Object p : ts) {
+            for (Object p: ts) {
                 System.out.println(p);
             }
             System.out.println("\n- - - - -\n");
