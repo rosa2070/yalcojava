@@ -1,7 +1,5 @@
 package sec09.chap05;
 
-import java.util.Comparator;
-
 public class Person implements Comparable<Person> {
     private static int lastNo = 0;
     private int no;
@@ -18,11 +16,25 @@ public class Person implements Comparable<Person> {
         this.married = married;
     }
 
-    public int getNo() { return no; }
-    public String getName() { return name; }
-    public int getAge() { return age; }
-    public double getHeight() {return height; }
-    public boolean isMarried() { return married; }
+    public int getNo() {
+        return no;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public boolean isMarried() {
+        return married;
+    }
 
     @Override
     public int compareTo(Person p) {
@@ -34,10 +46,4 @@ public class Person implements Comparable<Person> {
         return "no: %d, name: %s, age: %d, height: %f, married: %b"
                 .formatted(no, name, age, height, married);
     }
-
-
-
-
-
-
 }

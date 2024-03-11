@@ -7,7 +7,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.stream.*;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Ex02 {
     public static void main(String[] args) {
@@ -45,6 +47,13 @@ public class Ex02 {
         Stream fromColl1 = intAryList.stream();
         Object[] fromColl1_Arr = fromColl1.toArray();
 
+        //  맵의 경우 엔트리의 스트림으로 생성
+        Map<String, Character> subjectGradeHM = new HashMap<>();
+        subjectGradeHM.put("English", 'B');
+        subjectGradeHM.put("Math", 'C');
+        subjectGradeHM.put("Programming", 'A');
+        Object[] fromHashMap_Arr = subjectGradeHM.entrySet().stream().toArray();
+
         //  💡 빌더로 생성
         Stream.Builder<Character> builder = Stream.builder();
         builder.accept('스');
@@ -53,7 +62,7 @@ public class Ex02 {
         builder.accept('빌');
         builder.accept('더');
         Stream<Character> withBuilder = builder.build();
-        Object[] withBuilder_Arr = withBuilder.toArray();
+        Object[] withBuilder_arr = withBuilder.toArray();
 
         //  💡 concat 메소드로 생성
         Stream<Integer> toConcat1 = Stream.of(11, 22, 33);
@@ -65,12 +74,12 @@ public class Ex02 {
         //  - 인자: 초기값, 다음 값을 구하는 람다 함수
         //  - limit으로 횟수를 지정해야 함
         Stream<Integer> withIter1 = Stream
-                .iterate(0, i -> i + 2)
+                .iterate(0, i->i+2)
                 .limit(10);
         Object[] withIter1_Arr = withIter1.toArray();
 
         Stream<String> withIter2 = Stream
-                .iterate("홀", s -> s + (s.endsWith("홀") ? "짝" : "홀"))
+                .iterate("홀", s->s + (s.endsWith("홀")? "짝" : "홀"))
                 .limit(8);
         Object[] withIter2_Arr = withIter2.toArray();
 
@@ -80,6 +89,13 @@ public class Ex02 {
 
         Stream<Integer> fromRangeBox = fromRange1.boxed();
         Object[] fromRangeBox_Arr = fromRangeBox.toArray();
+
+        //  💡 Random 클래스의 스트림 생성 메소드들
+        IntStream randomInts = new Random().ints(5, 0, 100);
+        int[] randomInts_Arr = randomInts.toArray();
+
+        DoubleStream randomDbls = new Random().doubles(5, 2, 3);
+        double[] randomDbls_Arr = randomDbls.toArray();
 
         //  문자열을 각 문자에 해당하는 정수의 스트림으로
         IntStream fromString = "Hello World".chars();
@@ -99,7 +115,8 @@ public class Ex02 {
 
         //  💡 빈 스트림 생성
         //  - 스트림을 받는 메소드 등에서 종종 사용
-        Stream<Double> emptyDblStreamm = Stream.empty();
+        Stream<Double> emptyDblStream = Stream.empty();
+
 
 
     }

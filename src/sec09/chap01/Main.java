@@ -2,7 +2,6 @@ package sec09.chap01;
 
 public class Main {
     public static void main(String[] args) {
-
         Printer printer1 = new Printer() {
             @Override
             public void print() {
@@ -19,10 +18,9 @@ public class Main {
             System.out.println("{ } 필요");
         };
 
-        for (Printer p : new Printer[] {printer1, printer2, printer3, printer4}) {
+        for (Printer p: new Printer[] {printer1, printer2, printer3, printer4}) {
             p.print();
         }
-
 
         Returner returner1 = () -> {return 1;};
         Returner returner2 = () -> "반환 코드만 있을 시 { }와 return 생략가능";
@@ -30,13 +28,11 @@ public class Main {
         Object returned1 = returner1.returnObj();
         Object returned2 = returner2.returnObj();
 
-
         SingleParam square = (i) -> i * i;
         SingleParam cube = i -> i * i * i; // 인자가 하나일 시 괄호 생략 가능
 
         int _3_squared = square.func(3);
         int _3_cubed = cube.func(3);
-
 
         DoubleParam add = (a, b) -> a + b;
         DoubleParam multAndPrint = (a, b) -> {
@@ -45,12 +41,10 @@ public class Main {
             return result;
         };
 
-        int added = add.func(2, 3);
+        int added = add.func(2,3);
         int multiplied = multAndPrint.func(2, 3);
 
+
+
     }
-
-
-
 }
-

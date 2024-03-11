@@ -1,11 +1,12 @@
 package sec09.chap05;
 
 import java.util.*;
-import java.util.stream.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Ex02 {
     public static void main(String[] args) {
-
         String[] names = {
                 "강백호", "서태웅", "채치수", "송태섭", "정대만",
                 "윤대협", "변덕규", "황태산", "안영수", "허태환",
@@ -25,8 +26,8 @@ public class Ex02 {
                         random.nextBoolean()
                 ))
                 .sorted()
-                //.sorted((p1, p2) -> p1.getHeight() > p2.getHeight() ? 1 : -1)
-                //.sorted((p1, p2) -> Boolean.compare(p1.isMarried(), p2.isMarried()))
+//                .sorted((p1, p2) -> p1.getHeight() > p2.getHeight() ? 1 : -1)
+//                .sorted((p1, p2) -> Boolean.compare(p1.isMarried(), p2.isMarried()))
                 .toList();
 
         //  💡 collect, Collectors의 기능들
@@ -38,18 +39,19 @@ public class Ex02 {
 
                 //  💡 아래 중 원하는 컬렉션으로 택일
                 .collect(Collectors.toList());
-        //.collect(Collectors.toSet());
-        //.collect(Collectors.toCollection(ArrayList::new));
-        //.collect(Collectors.toCollection(LinkedList::new));
-        //.collect(Collectors.toCollection(TreeSet::new));
+                //.collect(Collectors.toSet());
+                //.collect(Collectors.toCollection(ArrayList::new));
+                //.collect(Collectors.toCollection(LinkedList::new));
+                //.collect(Collectors.toCollection(TreeSet::new));
 
         Map<String, Integer> nameAgeMap = people.stream()
-        //  💡 의미 없는 작업(해시맵이 될 스트림의 정렬)은 IDE가 제거 권유
+                //  💡 의미 없는 작업(해시맵이 될 스트림의 정렬)은 IDE가 제거 권유
                 .sorted((p1, p2) -> p1.getAge() > p2.getAge() ? 1 : -1)
                 .collect(Collectors.toMap(Person::getName, Person::getAge));
 
-        Map<Boolean, List<Person>> peopleMapByMarried = people.stream()
+        Map<Boolean, List<Person>> peopleHMapByMarried = people.stream()
                 .collect(Collectors.groupingBy(Person::isMarried));
+        List<Person> marrieds = peopleHMapByMarried.get(true);
 
         Map<Integer, List<Person>> peopleHMapByHeight = people.stream()
                 .collect(Collectors.groupingBy(
@@ -72,8 +74,6 @@ public class Ex02 {
         DoubleSummaryStatistics heightStats = people.stream()
                 .map(Person::getHeight)
                 .collect(Collectors.summarizingDouble(Double::doubleValue));
-
-
 
     }
 }

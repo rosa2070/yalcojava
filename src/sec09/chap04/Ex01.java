@@ -1,6 +1,8 @@
 package sec09.chap04;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Ex01 {
@@ -25,10 +27,9 @@ public class Ex01 {
 
         //  ⭐ 스트림을 사용한 방식
         //  각 라인이 무엇을 반환하는지 확인할 것
-        String oddStrStreamed = int0To9
+        String oddsStrStreamed = int0To9
                 .stream()
                 .filter(i -> i % 2 == 1)
-                .sorted(Integer::compare)
                 .map(String::valueOf)
                 .collect(Collectors.joining(", "));
     }
