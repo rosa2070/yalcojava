@@ -19,7 +19,7 @@ public class Ex03 {
         //  - 대용량 문자열에 대한 텍스트 처리에 적합
         try (
                 StringReader sr = new StringReader(input);
-                StringWriter sw = new StringWriter()
+                StringWriter sw = new StringWriter();
         ) {
             int c;
             while ((c = sr.read()) != -1) {
